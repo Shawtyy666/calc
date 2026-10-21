@@ -1,0 +1,49 @@
+@baseUrl = http://127.0.0.1:8000
+
+### Сложение: 5
+POST {{baseUrl}}/add
+Content-Type: application/json
+
+{"a":2,"b":3}
+
+### Вычитание: -1
+POST {{baseUrl}}/subtract
+Content-Type: application/json
+
+{"a":2,"b":3}
+
+### Умножение: 6
+POST {{baseUrl}}/multiply
+Content-Type: application/json
+
+{"a":2,"b":3}
+
+### Деление: 3.5
+POST {{baseUrl}}/divide
+Content-Type: application/json
+
+{"a":7,"b":2}
+
+### Операция по символу: 3.5
+POST {{baseUrl}}/calculate
+Content-Type: application/json
+
+{"a":7,"op":"/","b":2}
+
+### Сложное выражение: 22
+POST {{baseUrl}}/evaluate
+Content-Type: application/json
+
+{"expression":"(a+b)*c + (d-e)/(f-g)","variables":{"a":2,"b":3,"c":4,"d":10,"e":4,"f":5,"g":2}}
+
+### Приоритет операций: 14
+POST {{baseUrl}}/evaluate
+Content-Type: application/json
+
+{"expression":"2+3*4"}
+
+### Ошибка 400
+POST {{baseUrl}}/divide
+Content-Type: application/json
+
+{"a":1,"b":0}
